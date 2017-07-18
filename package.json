@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.4",
   "description": "A starter project for AngularJS Material",
-  "repository": "https://github.com/angular/material-start",
+  "repository": "https://github.com/samhita-bhuri/material-start.git",
   "licenses": [
     {
       "type": "MIT",

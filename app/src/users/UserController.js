@@ -3,7 +3,7 @@
   angular
        .module('users')
        .controller('UserController', [
-          'userService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log',
+          'userService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log', '$scope',
           UserController
        ]);
 
@@ -13,7 +13,8 @@
    * @param avatarsService
    * @constructor
    */
-  function UserController( userService, $mdSidenav, $mdBottomSheet, $timeout, $log ) {
+
+  function UserController( userService, $mdSidenav, $mdBottomSheet, $timeout, $log, $scope ) {
     var self = this;
 
     self.selected     = null;
@@ -21,6 +22,15 @@
     self.selectUser   = selectUser;
     self.toggleList   = toggleUsersList;
     self.makeContact  = makeContact;
+    self.added = [{name: "d",
+    avatar: "s",
+    content : "s"}
+    ];
+    $scope.name = "default";
+    $scope.avatar = "default";
+    $scope.content = "default";
+
+
 
     // Load all registered users
 
@@ -83,6 +93,27 @@
           };
         }
     }
+    /**
+     * Add the user data
+     */
+
+     $scope.addUser = function() {
+
+      var dataObj = {
+        "name" : $scope.name,
+        "avatar": $scope.avatar,
+        "content": $scope.content
+      };
+
+
+      self.added.push(dataObj);
+
+      $scope.name = "";
+      $scope.avatar = "";
+      $scope.content = "";
+
+
+    };
 
   }
 

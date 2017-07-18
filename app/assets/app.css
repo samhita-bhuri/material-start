@@ -1,4 +1,4 @@
-html, body {
+html, body, div {
   font-family: 'Roboto', sans-serif;
   font-size:14px;
   height:100%;
@@ -6,7 +6,14 @@ html, body {
   padding: 0px;
 }
 
+md-tabs {
+  background-color: lightblue;
+}
 /* Toolbar area */
+
+#adduserform {
+  background-color: white;
+}
 
 .menu {
   background-color: transparent;
